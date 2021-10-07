@@ -6,13 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  isDash:boolean = true;
+  isDash:string="";
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  change(){
-    this.isDash=!this.isDash;
+  change(x:string){
+    if(x==="dashboard")
+      this.isDash="dashboard";
+    else if(x==="present") 
+      this.isDash="present";
   }
 }

@@ -5,12 +5,12 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
-        <a routerLink="" class="nav-link text-white" [ngClass]="{'active': isDash}" (click)="change()">
+        <a routerLink="" class="nav-link text-white" [ngClass]="{'active': isDash===&quot;dashboard&quot;}" (click)="change('dashboard')">
           Dashboard
         </a>
       </li>
       <li>
-        <a routerLink="present-list" class="nav-link text-white" [ngClass]="{'active': !isDash}" (click)="change()">
+        <a routerLink="present-list" class="nav-link text-white" [ngClass]="{'active': isDash===&quot;present&quot;}" (click)="change('present')">
           Present Students List
         </a>
       </li>
