@@ -1,0 +1,53 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Student Present List</h1>
+</div>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date</th>
+                                <th>Present</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date</th>
+                                <th>Present</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                       
+                        <tbody>
+                                <tr *ngFor="let student of studentList" >
+                                    <td *ngIf="student.present == &quot;Yes&quot;">{{student.id}}</td>
+                                    <td *ngIf="student.present == &quot;Yes&quot;">{{student.userName}}</td>
+                                    <td *ngIf="student.present == &quot;Yes&quot;">{{student.userEmail}}</td>
+                                    <td *ngIf="student.present == &quot;Yes&quot;">{{student.phoneNumber}}</td>
+                                    <td *ngIf="student.present == &quot;Yes&quot;">{{student.attDate | date:'yyyy-MM-dd'}}</td>
+                                    <td *ngIf="student.present == &quot;Yes&quot;">{{student.present}}</td>
+                                    <td *ngIf="student.present == &quot;Yes&quot;">
+                                        <button [routerLink]="['/edit-student',student.id]" class="btn btn-primary btn-sm m-2">Edit</button>
+                                        <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
+                                    </td>
+                                </tr>
+                        </tbody>
+
+                    </table>
+                    </div>
+        </div>
